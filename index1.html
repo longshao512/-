@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>餐厅后台管理系统</title>
+		<link href="https://fonts.font.im/css?family=Hanalei+Fill" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/index1.css" />
+		<script type="text/javascript" src="js/index1.js"></script>
+		<script type="text/javascript" src="js/index2.js"></script>
+		<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
+	</head>
+	<body>
+
+		<div class="right">
+			<div class="top-right">餐厅后台管理系统</div>
+			<div class="div1" data-toggle="collapse" data-target="#demo2"><i class="fa fa-fire"></i> Order<i class="fa fa-caret-down"></i></div>
+			<div id="demo2" class="collapse">
+				<li>显示当前所有订单</li>
+				<li>添加订单</li>
+				<li>修改订单</li>
+				<li>删除订单</li>
+			</div>
+
+			<div class="div1" data-toggle="collapse" data-target="#demo1"><i class="fa fa-coffee"></i>Food<i class="fa fa-caret-down"></i></div>
+			<div id="demo1" class="collapse">
+				<li>显示当前所有菜单</li>
+				<li>添加菜单</li>
+				<li>修改菜单</li>
+				<li>删除菜单</li>
+			</div>
+
+			<div class="div1" data-toggle="collapse" data-target="#demo"><i class="fa fa-user-o "></i>User<i class="fa fa-caret-down"></i></div>
+			<div id="demo" class="collapse">
+				<li id="update">用户信息修改</li>
+				<li id="looker">查看用户信息</li>
+				<li>用户退出</li>
+			</div>
+		</div>
+
+
+		<div class="left">
+			<div class="top-left">
+				<i class="fa fa-tasks"></i>
+				<i class="fa fa-globe"></i>
+				<i class="fa fa-arrows-alt"></i>
+				<i class="fa fa-repeat"></i>
+				<i class="fa fa-tags"></i>
+				<div class="shortbox">
+					<i class="fa fa-user-circle"></i>
+					<i class="fa fa-sign-out" id="return"></i>
+				</div>
+			</div>
+			
+					
+
+<div class="box">
+
+				<!-- Modal -->
+				<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+				 aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">修改订单</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="formGroupExampleInput">菜品名称</label>
+										<input type="text" class="form-control" id="formGroupExampleInput">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品价格</label>
+										<input type="text" class="form-control" id="formGroupExampleInput2">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput">菜品描述</label>
+										<input type="text" class="form-control" id="formGroupExampleInput3">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品类型</label>
+										<input type="text" class="form-control" id="formGroupExampleInput4">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品类型id</label>
+										<input type="text" class="form-control" id="formGroupExampleInput4">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary">保存</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+                 <!-- Modal -->
+				<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+				 aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="exampleModalLabel">添加菜单</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form>
+									<div class="form-group">
+										<label for="formGroupExampleInput">菜品名称</label>
+										<input type="text" class="form-control" id="name">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品价格</label>
+										<input type="text" class="form-control" id="price">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput">菜品描述</label>
+										<input type="text" class="form-control" id="desc">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品类型</label>
+										<input type="text" class="form-control" id="typename">
+									</div>
+									<div class="form-group">
+										<label for="formGroupExampleInput2">菜品类型id</label>
+										<input type="text" class="form-control" id="typeid">
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+								<button type="button" class="btn btn-primary">保存</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+				<button id="myeditBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal1">添加</button>
+				<button id="myeditBtn" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">修改</button>
+				<table class="table table-hover table-bordered">
+					<thead>
+						<tr style="background: #D3D3D3;">
+							<th>菜品名称</th>
+							<th>菜品价格</th>
+							<th>菜品描述</th>
+							<th>菜品类型</th>
+							<th>菜品类型id</th>
+						</tr>
+
+					</thead>
+					
+				<input id="prevPage" type="button" value="上一页" class="btn btn-default pagebtn" />
+				<input id="nextPage" type="button" value="下一页" class="btn btn-default pagebtn" />
+				<span> 当前第<span id="showpage"></span>/<span id="showtotalpage"></span>每页显示3条记录
+				
+					<tbody id="listTable" id="mainData">
+               </tbody></table>
+			</div>
+</div>
+			<script>
+				//普通请求  请求servlet 由servlet跳转到页面
+				//Ajax请求  直接由页面发出请求向服务器  html +Ajax 可以达到动态页面的效果
+				//发参数  取数据 除理到页面上
+				var page;
+				var pageSize;
+				var totalPage;
+
+				var selectRow = [];
+				$(function() {
+					getUserData("");
+
+					$("#nextPage").click(function() {
+							var myparam = {
+								"name:"
+								$("#name").val(),
+								"price:"
+								$("#price").val(),
+								"desc:"
+								$("#desc").val(),
+								"typename:"
+								$("#typename").val(),
+								"typeid:"
+								$("#typeid").val(),
+
+							}) getUserData(myparam);
+					}) $("#prevPage").click(function() {
+						var myparam = {
+							"name:"
+							$("#name").val(),
+							"price:"
+							$("#price").val(),
+							"desc:"
+							$("#desc").val(),
+							"typename:"
+							$("#typename").val(),
+							"typeid:"
+							$("#typeid").val(),
+
+						}) getUserData(myparam);
+				})
+				$("#myquery").click(function() {
+					var myparam = {
+						"name:"
+						$("#name").val(),
+						"price:"
+						$("#price").val(),
+						"desc:"
+						$("#desc").val(),
+						"typename:"
+						$("#typename").val(),
+						"typeid:"
+						$("#typeid").val(),
+
+					}) getUserData(myparam);
+				})
+
+				$("#myeditBtn").click(function() {
+					$("name").val(SelectRow[0]);
+					$("price").val(SelectRow[1]);
+					$("desc").val(SelectRow[2]);
+					$("typename").val(SelectRow[3]);
+					$("typeid").val(SelectRow[4]);
+				})
+				$("editSubimBtn").click(function() {
+							$.ajax({
+									type: "post",
+									url: "http://39.105.232.109:3000/food/updata",
+									async: true,
+									dataType: "json",
+									data: param
+
+									success: function(data) {
+
+									})
+							})function getUserData(param) {
+							$.ajax({
+								type: "post",
+								url: "http://39.105.232.109:3000/food/updata",
+								async: true,
+								dataType: "json",
+								data: param
+
+								success: function(data) {
+									//console.log(data);
+									$("#mainData").html("");
+									$each(data.listUser, function(i, d) {
+										$("#mainData").append("<tr><td>" + d.useId + "</td><td>" + d.userName + )
+									})
+									//"totalPage":4;"pageSize":3,"page":1,
+									//每访问一次后台  把最新的数据保存在页面上
+									page = data.page;
+									pageSize = data.pageSize;
+									totalPage = data.totalPage;
+
+									$("#showpage").html(data, page);
+									$("#showtatalpage").html(data, totalpage);
+									$("#showpageSize").html(data, pageSize);
+
+
+									$("#mainData tr").click(function() {
+										$("#mainData tr").removeClass("info");
+										$(this).addClass("info");
+										selectRow = [];
+										$(this).find("td").each(function() {
+											selectRow.push($(this).html());
+										})
+										console.log(selectRow);
+									})
+									//每次从服务器获取最新数据之后  修改页面按钮的状态
+									initBtn();
+								}
+							});
+						}
+
+						function initBtn() {
+							$(".pagebtn").each(function(i) {
+								$(this).prop("disabled", false);
+							})
+							if (page == 1) {
+								$("#nextPage").prop("disabled", true);
+							}
+							if (page == totalPage) {
+								$("#nextPage").prop("disabled", true);
+							}
+						}
+			</script>
+
+	</body>
+</html>
